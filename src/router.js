@@ -6,9 +6,22 @@ const { ctime, apiKey } = require('./config')
 const router = express.Router()
 const BASE_URL = 'https://zingmp3.vn/api'
 
+var cookie = ''
+
+try {
+    setInterval(() => {
+        axios.get('https://zingmp3.vn')
+            .then(res => res.headers['set-cookie'].filter(e => e.includes('zmp3_rqid_lagecy')).join('').split(';')[0])
+            .then(cookies => cookie = cookies)
+    }, 3600)
+} catch (error) {
+    console.log(error)
+}
+
 const getId = (songURL) => {
     return songURL.split('/').slice(-1)[0].split('.html')[0]
 }
+
 const onFetchData = (path) => {
     return new Promise((resolve, reject) => {
         axios({
@@ -17,15 +30,16 @@ const onFetchData = (path) => {
             url: `${path}&api_key=${apiKey}`,
             headers: {
                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
-                'Cookie': 'zmp3_rqid_lagecy=MTAxNzI1NDIzMXwxNzEdUngMjM0LjIxOS4yNDl8djAdUngMi4xMnwxNjA3ODQzNDA5NTmUsIC1'
+                'Cookie': cookie
             }
         })
             //.then(res => res.data)
             .then(resolve)
     })
 }
+
 router.get('/', async (req, res) => {
-    let { data }  = await onFetchData(`/home?ctime=${ctime()}&sig=${sign('/home', `ctime=${ctime()}`)}`)
+    let { data } = await onFetchData(`/home?ctime=${ctime()}&sig=${sign('/home', `ctime=${ctime()}`)}`)
     await res.json(data)
 })
 
