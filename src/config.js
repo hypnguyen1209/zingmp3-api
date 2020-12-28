@@ -1,7 +1,16 @@
+const router = require("./router")
+
 module.exports = {
-    apiKey: '38e8643fb0dc04e8d65b99994d3dafff',
-    secretKey: '10a01dcf33762d3a204cb96429918ff6',
+    apiKey: 'kI44ARvPwaqL7v0KuDSM0rGORtdY1nnw',
+    secretKey: '882QcNXV4tUZbvAsjmFOHqNC1LpcBRKW',
     ctime: () => {
         return Math.floor(Date.now() / 1000)
+    },
+    route: {
+        home: '/api/v2/home',
+        song: '/api/v2/song/getStreaming',
+        info: '/api/v2/playlist/getDetail',
+        chart: '/api/v2/chart/getHome',
+        video: '/api/v2/video/getSectionRelate',
     }
 }

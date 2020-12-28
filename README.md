@@ -25,33 +25,6 @@ https://zingmp3-api.herokuapp.com/song?id=ZO0FW0Z8
 https://zingmp3-api.herokuapp.com/song?url=https://zingmp3.vn/bai-hat/Sao-Em-Lai-Tat-May-Pham-Nguyen-Ngoc-Vanh-B/ZO0FW0Z8.html
 ```
 
-#### Lấy link download (version beat): 
-```C
-// https://zingmp3.vn/bai-hat/Sao-Em-Lai-Tat-May-Pham-Nguyen-Ngoc-Vanh-B/ZO0FW0Z8.html
-
-https://zingmp3-api.herokuapp.com/song-beat?id=ZO0FW0Z8
-https://zingmp3-api.herokuapp.com/song-beat?url=https://zingmp3.vn/bai-hat/Sao-Em-Lai-Tat-May-Pham-Nguyen-Ngoc-Vanh-B/ZO0FW0Z8.html
-```
-
-
-#### Lấy thông tin của album:
-```C
-// https://zingmp3.vn/album/Rap-Viet-Ngay-Nay-Various-Artists/ZE7BW00W.html
-
-https://zingmp3-api.herokuapp.com/album?id=ZO0FW0Z8
-https://zingmp3-api.herokuapp.com/album?url=https://zingmp3.vn/album/Rap-Viet-Ngay-Nay-Various-Artists/ZE7BW00W.html
-```
-
-#### Lấy thông tin của top 100 ZingMP3
-```C
-https://zingmp3-api.herokuapp.com/top100
-```
-
-#### Lấy thông tin của thể loại album:
-```C
-https://zingmp3-api.herokuapp.com/albums
-```
-
 #### Lấy thông tin của video (bao gồm link video):
 ```C
 // https://zingmp3.vn/video-clip/Khong-The-Cung-Nhau-Suot-Kiep-Zing-Music-Awards-2020-Hoa-Minzy/ZOW9IA96.html
